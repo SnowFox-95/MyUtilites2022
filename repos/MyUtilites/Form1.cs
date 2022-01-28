@@ -51,6 +51,13 @@ namespace MyUtilites
 
         private void btnRandom_Click(object sender, EventArgs e)
         {
+            //добавлена проверка на случай, если в поле "От" будет установлено число больше чем в "До" -> они просто поменяются местами, чтобы не выдало ошибку:
+            if (numericUpDown1.Value > numericUpDown2.Value)
+            {
+                var temp = numericUpDown1.Value;
+                numericUpDown1.Value = numericUpDown2.Value;
+                numericUpDown2.Value = temp;
+            }
             int n;
             n = rnd.Next(Convert.ToInt32(numericUpDown1.Value), Convert.ToInt32(numericUpDown2.Value));
             lblRandom.Text = Convert.ToString(n);
