@@ -54,6 +54,25 @@ namespace MyUtilites
             int n;
             n = rnd.Next(Convert.ToInt32(numericUpDown1.Value), Convert.ToInt32(numericUpDown2.Value));
             lblRandom.Text = Convert.ToString(n);
+            if (cbRndwithRepeat.Checked)
+            {
+                if (tbRandom.Text.IndexOf(n.ToString()) == -1)
+                    tbRandom.AppendText(n + Environment.NewLine);
+            }
+            else
+            {
+                tbRandom.AppendText(n + Environment.NewLine);
+            }
+        }
+
+        private void btnRandomClear_Click(object sender, EventArgs e)
+        {
+            tbRandom.Clear();
+        }
+
+        private void btnRandomCopy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(tbRandom.Text);
         }
     }
 }
