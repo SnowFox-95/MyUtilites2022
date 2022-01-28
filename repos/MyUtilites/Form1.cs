@@ -87,5 +87,35 @@ namespace MyUtilites
         {
             Clipboard.SetText(tbRandom.Text);
         }
+
+        private void tsmiInsertDate_Click(object sender, EventArgs e)
+        {
+            rtbNotepad.AppendText(DateTime.Now.ToShortDateString()+"\n");
+        }
+
+        private void tsmiInsertTime_Click(object sender, EventArgs e)
+        {
+            rtbNotepad.AppendText(DateTime.Now.ToShortTimeString() + "\n");
+        }
+
+        private void tsmiSave_Click(object sender, EventArgs e)
+        {
+            try { rtbNotepad.SaveFile("notepad.rtf"); }
+            catch { MessageBox.Show("Ошибка сохранения"); }
+        }
+        void LoadNotePad()
+        {
+            try { rtbNotepad.LoadFile("notepad.rtf"); }
+            catch { MessageBox.Show("Ошибка загрузки"); }
+        }
+        private void tsmiLoad_Click(object sender, EventArgs e)
+        {
+            LoadNotePad();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            LoadNotePad();
+        }
     }
 }
