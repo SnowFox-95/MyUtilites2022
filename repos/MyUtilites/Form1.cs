@@ -114,7 +114,7 @@ namespace MyUtilites
         void LoadNotePad()
         {
             try { rtbNotepad.LoadFile("notepad.rtf"); }
-            catch { MessageBox.Show("Ошибка загрузки"); }
+            catch { MessageBox.Show("Ошибка загрузки файла блокнота. Файл не существует или не создан"); }
         }
         private void tsmiLoad_Click(object sender, EventArgs e)
         {
@@ -224,6 +224,11 @@ namespace MyUtilites
                     break;
                 
             }
+        }
+
+        private void cbTo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

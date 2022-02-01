@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiExit = new System.Windows.Forms.ToolStripMenuItem();
@@ -92,7 +93,7 @@
             this.помощьToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(294, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(348, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -175,7 +176,7 @@
             // tsmiAbout
             // 
             this.tsmiAbout.Name = "tsmiAbout";
-            this.tsmiAbout.Size = new System.Drawing.Size(149, 22);
+            this.tsmiAbout.Size = new System.Drawing.Size(180, 22);
             this.tsmiAbout.Text = "О программе";
             this.tsmiAbout.Click += new System.EventHandler(this.tsmiAbout_Click);
             // 
@@ -190,7 +191,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(294, 346);
+            this.tabControl1.Size = new System.Drawing.Size(348, 346);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
@@ -265,7 +266,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(368, 320);
+            this.tabPage2.Size = new System.Drawing.Size(340, 320);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Генератор";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -474,7 +475,7 @@
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(286, 320);
+            this.tabPage5.Size = new System.Drawing.Size(340, 320);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Конвертер";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -489,7 +490,7 @@
             // 
             // btnConvert
             // 
-            this.btnConvert.Location = new System.Drawing.Point(102, 111);
+            this.btnConvert.Location = new System.Drawing.Point(131, 111);
             this.btnConvert.Name = "btnConvert";
             this.btnConvert.Size = new System.Drawing.Size(75, 23);
             this.btnConvert.TabIndex = 2;
@@ -523,15 +524,16 @@
             "m",
             "km",
             "mile"});
-            this.cbTo.Location = new System.Drawing.Point(183, 87);
+            this.cbTo.Location = new System.Drawing.Point(237, 87);
             this.cbTo.Name = "cbTo";
             this.cbTo.Size = new System.Drawing.Size(95, 21);
             this.cbTo.TabIndex = 1;
             this.cbTo.Text = "mm";
+            this.cbTo.SelectedIndexChanged += new System.EventHandler(this.cbTo_SelectedIndexChanged);
             // 
             // tbTo
             // 
-            this.tbTo.Location = new System.Drawing.Point(183, 114);
+            this.tbTo.Location = new System.Drawing.Point(237, 114);
             this.tbTo.Name = "tbTo";
             this.tbTo.ReadOnly = true;
             this.tbTo.Size = new System.Drawing.Size(95, 20);
@@ -539,7 +541,7 @@
             // 
             // btnSwap
             // 
-            this.btnSwap.Location = new System.Drawing.Point(102, 82);
+            this.btnSwap.Location = new System.Drawing.Point(131, 85);
             this.btnSwap.Name = "btnSwap";
             this.btnSwap.Size = new System.Drawing.Size(75, 23);
             this.btnSwap.TabIndex = 5;
@@ -553,9 +555,9 @@
             this.cbMetric.Items.AddRange(new object[] {
             "Длина",
             "Вес"});
-            this.cbMetric.Location = new System.Drawing.Point(102, 55);
+            this.cbMetric.Location = new System.Drawing.Point(100, 58);
             this.cbMetric.Name = "cbMetric";
-            this.cbMetric.Size = new System.Drawing.Size(75, 21);
+            this.cbMetric.Size = new System.Drawing.Size(132, 21);
             this.cbMetric.TabIndex = 6;
             this.cbMetric.Text = "Длина";
             this.cbMetric.SelectedIndexChanged += new System.EventHandler(this.cbMetric_SelectedIndexChanged);
@@ -564,9 +566,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(294, 370);
+            this.ClientSize = new System.Drawing.Size(348, 370);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Мои утилиты";
