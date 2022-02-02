@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace MyUtilites
@@ -14,7 +9,7 @@ namespace MyUtilites
     {
         int count = 0;
         Random rnd;
-        char[] spec_chars = new char[] { '%', '"', ')', '?', '#', '$', '^', '&', '~'};
+        char[] spec_chars = new char[] { '%', '"', ')', '?', '#', '$', '^', '&', '~' };
         Dictionary<string, double> metrica;
         public MainForm()
         {
@@ -98,7 +93,7 @@ namespace MyUtilites
 
         private void tsmiInsertDate_Click(object sender, EventArgs e)
         {
-            rtbNotepad.AppendText(DateTime.Now.ToShortDateString()+"\n");
+            rtbNotepad.AppendText(DateTime.Now.ToShortDateString() + "\n");
         }
 
         private void tsmiInsertTime_Click(object sender, EventArgs e)
@@ -136,17 +131,20 @@ namespace MyUtilites
         {
             if (clbPassword.CheckedItems.Count == 0) return;
             string Password = "";
-            for (int i=0; i<nudPassLength.Value; i++)
+            for (int i = 0; i < nudPassLength.Value; i++)
             {
                 int n = rnd.Next(0, clbPassword.CheckedItems.Count);
                 string s = clbPassword.CheckedItems[n].ToString();
                 switch (s)
                 {
-                    case "Цифры": Password+=rnd.Next(10).ToString();
+                    case "Цифры":
+                        Password += rnd.Next(10).ToString();
                         break;
-                    case "Прописные буквы": Password += Convert.ToChar(rnd.Next(65,88));
+                    case "Прописные буквы":
+                        Password += Convert.ToChar(rnd.Next(65, 88));
                         break;
-                    case "Строчные буквы": Password += Convert.ToChar(rnd.Next(97,122)) ;
+                    case "Строчные буквы":
+                        Password += Convert.ToChar(rnd.Next(97, 122));
                         break;
                     default:
                         Password += spec_chars[rnd.Next(spec_chars.Length)];
@@ -222,7 +220,7 @@ namespace MyUtilites
                     cbFrom.Text = "g";
                     cbTo.Text = "g";
                     break;
-                
+
             }
         }
 
